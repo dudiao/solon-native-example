@@ -1,0 +1,12 @@
+server.port: 8080
+
+solon.app:
+  name: 'demo-app'
+  group: 'demo'
+solon.logging.appender:
+  console:
+    pattern: "%d{yyyy-MM-dd HH:mm:ss} %-5level %white(---) %-45(%cyan(%.32logger{30}:%L)) %msg%n"
+
+json.inputFilePath: /Users/songyinyin/study/solon-demo/src/main/resources/json/test.json
+json.outputDir: target/json
+json.inputFileCharset: UTF-8
