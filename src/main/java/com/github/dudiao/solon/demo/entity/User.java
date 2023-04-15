@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.demo;
+package com.github.dudiao.solon.demo.entity;
 
 import lombok.Data;
 

@@ -12,12 +12,12 @@
     </parent>
 
     <groupId>com.dudiao.solon</groupId>
-    <artifactId>solon-demo</artifactId>
+    <artifactId>solon-native-example</artifactId>
     <version>1.0</version>
     
     <packaging>jar</packaging>
 
-    <description>Demo project for Solon</description>
+    <description>Solon graalvm native example</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,10 +31,19 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
+        <!--solon native start-->
+        <!--aot 注册native元信息-->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.aot</artifactId>
         </dependency>
+        <!-- apt 生成代理类 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.proxy.apt</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--solon native end-->
 
         <dependency>
             <groupId>org.noear</groupId>
@@ -67,7 +76,7 @@
             <plugin>
                 <groupId>org.noear</groupId>
                 <artifactId>solon-maven-plugin</artifactId>
-                <version>${parent.version}</version>
+                <version>${project.parent.version}</version>
                 <executions>
                     <execution>
                         <id>process-aot</id>

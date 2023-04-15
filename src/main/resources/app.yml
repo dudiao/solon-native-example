@@ -7,6 +7,6 @@ solon.logging.appender:
   console:
     pattern: "%d{yyyy-MM-dd HH:mm:ss} %-5level %white(---) %-45(%cyan(%.32logger{30}:%L)) %msg%n"
 
-json.inputFilePath: /Users/songyinyin/study/solon-demo/src/main/resources/json/test.json
+json.inputFilePath: /Users/songyinyin/study/solon-native-example/src/main/resources/json/test.json
 json.outputDir: target/json
 json.inputFileCharset: UTF-8
