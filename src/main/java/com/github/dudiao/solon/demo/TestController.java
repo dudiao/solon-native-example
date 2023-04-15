@@ -11,7 +11,7 @@ import org.noear.solon.annotation.Mapping;
 public class TestController {
 
   @Mapping("/hello")
-  public String hello() {
-    return "Hello world!";
+  public String hello(String msg) {
+    return "Hello world! " + msg;
   }
 }
