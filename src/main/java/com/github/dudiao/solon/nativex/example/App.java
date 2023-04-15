@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.demo;
+package com.github.dudiao.solon.nativex.example;
 
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.Solon;

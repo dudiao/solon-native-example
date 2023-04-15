@@ -1,6 +1,6 @@
-package com.github.dudiao.solon.demo.aot;
+package com.github.dudiao.solon.nativex.example.aot;
 
-import com.github.dudiao.solon.demo.entity.User;
+import com.github.dudiao.solon.nativex.example.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;

@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.demo.service;
+package com.github.dudiao.solon.nativex.example.service;
 
 import cn.hutool.core.date.DateUtil;
 import lombok.extern.slf4j.Slf4j;

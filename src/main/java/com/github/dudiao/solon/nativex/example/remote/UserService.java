@@ -1,6 +1,6 @@
-package com.github.dudiao.solon.demo.remote;
+package com.github.dudiao.solon.nativex.example.remote;
 
-import com.github.dudiao.solon.demo.entity.User;
+import com.github.dudiao.solon.nativex.example.entity.User;
 
 /**
  * @author songyinyin

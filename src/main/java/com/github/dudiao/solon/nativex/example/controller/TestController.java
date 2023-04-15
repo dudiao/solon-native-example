@@ -1,6 +1,6 @@
-package com.github.dudiao.solon.demo.controller;
+package com.github.dudiao.solon.nativex.example.controller;
 
-import com.github.dudiao.solon.demo.service.TestService;
+import com.github.dudiao.solon.nativex.example.service.TestService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;

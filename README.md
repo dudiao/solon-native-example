@@ -60,7 +60,7 @@ sdk use java 22.3.1.r17-grl
 mvn clean native:compile -P native
 
 # 运行可执行成
-./target/solon-demo 
+./target/solon-native-example
 ```
 
 ## 测试

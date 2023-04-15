@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.demo.event;
+package com.github.dudiao.solon.nativex.example.event;
 
 import lombok.Data;
 import org.noear.solon.annotation.Configuration;
