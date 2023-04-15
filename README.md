@@ -12,7 +12,7 @@
 
 下载地址：https://github.com/graalvm/graalvm-ce-builds/releases
 
-下载对应的版本，建议使用 sdkman ([https://sdkman.io/](https://sdkman.io/))来管理不同的jdk版本
+下载对应的版本，建议使用 sdkman (安装地址：[https://sdkman.io/](https://sdkman.io/))来管理不同的jdk版本
 ```shell
 # 最新版本为：22.3.1.r17-grl，可以在下载地址中查看最新版本
 sdk install java 22.3.1.r17-grl
