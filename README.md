@@ -3,7 +3,7 @@
 
 本项目是一个 将`solon`打包成 native 可执行程序 的示例
 
-## 环境要求
+## 1、环境要求
 `graalvm 17` & `native-image`
 
 
@@ -12,7 +12,7 @@
 
 下载地址：https://github.com/graalvm/graalvm-ce-builds/releases
 
-下载对应的版本，建议使用sdkman来管理不同的jdk版本
+下载对应的版本，建议使用 sdkman ( 安装地址：[https://sdkman.io/](https://sdkman.io/) ) 来管理不同的jdk版本
 ```shell
 # 最新版本为：22.3.1.r17-grl，可以在下载地址中查看最新版本
 sdk install java 22.3.1.r17-grl
@@ -28,14 +28,16 @@ sdk use java 22.3.1.r17-grl
 gu install native-image
 ```
 
-## 打包成Jar
+## 2、打包成 jar
+
 ```shell
 mvn clean package
 ```
 
-## 打包成native可执行程序
+## 3、打包成 native 可执行程序
 
 1. 引入依赖（本项目已经引入）
+
 ```xml
 <!--solon native start-->
 <!--aot 注册native元信息-->
@@ -52,7 +54,8 @@ mvn clean package
 <!--solon native end-->
 ```
 
-2. 激活native的profile，执行`mvn`命令
+2. 激活 native 的 profile，执行`mvn`命令
+
 ```shell
 sdk use java 22.3.1.r17-grl
 
@@ -63,7 +66,7 @@ mvn clean native:compile -P native
 ./target/solon-native-example
 ```
 
-## 测试
+## 4、测试
 
 ```http request
 GET http://localhost:8080/hello?msg=你好
@@ -83,7 +86,7 @@ GET http://localhost:8080/rpc/v1/user/getById?userId=11
 }
 ```
 
-### service带缓存
+### service 带缓存
     
 ```http request
 GET http://localhost:8080/cache/say?msg=你好
