@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         # 'ubuntu-latest', 'windows-latest', 'macos-latest'
-        os: ['windows-latest']
+        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
     name: build - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     # https://github.com/softprops/action-gh-release/issues/236#issuecomment-1150530128
@@ -37,14 +37,15 @@ jobs:
     - name: Build with Maven
       run: |
         mvn clean native:compile -P native,tencent --file pom.xml --no-transfer-progress package
+        cp target/solon-native-example* .
     # 压缩文件
     - name: Archive zip
       uses: thedoctor0/zip-release@master
       with:
         type: 'zip'
-        path: 'target/solon-native-example*'
+        path: 'solon-native-example*'
         filename: solon-native-example-${{ matrix.os }}.zip
-        exclusions: 'target/*.txt target/solon-native-example-*.jar target/solon-native-example-*.jar.original'
+        exclusions: 'solon-native-example*.txt solon-native-example*.jar solon-native-example*.jar.original'
     # 上传构建产物
     - name: Upload artifact
       uses: actions/upload-artifact@v3.0.0
