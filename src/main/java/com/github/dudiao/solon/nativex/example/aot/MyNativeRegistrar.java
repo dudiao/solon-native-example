@@ -4,7 +4,7 @@ import com.github.dudiao.solon.nativex.example.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
-import org.noear.solon.aot.RuntimeNativeProcessor;
+import org.noear.solon.aot.RuntimeNativeRegistrar;
 import org.noear.solon.core.AopContext;
 
 /**
@@ -13,10 +13,10 @@ import org.noear.solon.core.AopContext;
  */
 @Slf4j
 @Component
-public class MyNativeProcessor implements RuntimeNativeProcessor {
+public class MyNativeRegistrar implements RuntimeNativeRegistrar {
 
   @Override
-  public void process(AopContext context, RuntimeNativeMetadata nativeMetadata) {
+  public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
     log.info("MyNativeProcessor process");
     nativeMetadata.registerSerialization(User.class);
   }
