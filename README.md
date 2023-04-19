@@ -69,7 +69,9 @@ mvn clean native:compile -P native
 ## 4、测试
 
 ```http request
-GET http://localhost:8080/hello?msg=你好
+GET http://localhost:8080/hello?name=solon
+GET http://localhost:8080/hello/tml?name=solon
+GET http://localhost:8080/jquery.min.js
 ```
 
 ### remote
