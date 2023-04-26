@@ -45,12 +45,6 @@ mvn clean package
     <groupId>org.noear</groupId>
     <artifactId>solon.aot</artifactId>
 </dependency>
-<!-- apt 生成代理类 -->
-<dependency>
-    <groupId>org.noear</groupId>
-    <artifactId>solon.proxy.apt</artifactId>
-    <scope>provided</scope>
-</dependency>
 <!--solon native end-->
 ```
 
@@ -72,6 +66,7 @@ mvn clean native:compile -P native
 GET http://localhost:8080/hello?name=solon
 GET http://localhost:8080/hello/tml?name=solon
 GET http://localhost:8080/jquery.min.js
+GET http://localhost:8080/htm/hello.htm
 ```
 
 ### remote
