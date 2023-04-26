@@ -32,7 +32,7 @@
         </dependency>
 
         <!--solon native start-->
-        <!--aot 注册native元信息-->
+        <!--aot 注册 native 元信息-->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.aot</artifactId>
