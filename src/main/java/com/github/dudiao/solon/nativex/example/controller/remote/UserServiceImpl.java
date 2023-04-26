@@ -1,6 +1,6 @@
-package com.github.dudiao.solon.nativex.example.remote;
+package com.github.dudiao.solon.nativex.example.controller.remote;
 
-import com.github.dudiao.solon.nativex.example.entity.User;
+import com.github.dudiao.solon.nativex.example.model.entity.User;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
 
