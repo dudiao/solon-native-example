@@ -19,7 +19,7 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
   public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
     log.info("RuntimeNativeRegistrar process");
 
-    //按包注册（）
+    //按包注册
     nativeMetadata.registerSerialization(Model.class.getPackage());
 
     //按类注册
