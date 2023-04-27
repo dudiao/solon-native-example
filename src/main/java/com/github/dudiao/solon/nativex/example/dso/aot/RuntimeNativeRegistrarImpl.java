@@ -1,8 +1,6 @@
 package com.github.dudiao.solon.nativex.example.dso.aot;
 
 import com.github.dudiao.solon.nativex.example.model.Model;
-import com.github.dudiao.solon.nativex.example.model.entity.Order;
-import com.github.dudiao.solon.nativex.example.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
