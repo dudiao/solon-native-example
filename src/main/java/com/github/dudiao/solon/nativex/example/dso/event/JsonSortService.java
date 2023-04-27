@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.nativex.example.event;
+package com.github.dudiao.solon.nativex.example.dso.event;
 
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Component;

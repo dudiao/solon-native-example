@@ -7,14 +7,14 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.2.12</version>
+        <version>2.2.14-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <groupId>com.dudiao.solon</groupId>
     <artifactId>solon-native-example</artifactId>
     <version>1.0</version>
-    
+
     <packaging>jar</packaging>
 
     <description>Solon graalvm native example</description>
@@ -31,19 +31,12 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
-        <!--solon native start-->
-        <!--aot 注册native元信息-->
+        <!--solon aot start（用于 aot 时注册 native 元信息）-->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.aot</artifactId>
         </dependency>
-        <!-- apt 生成代理类 -->
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.proxy.apt</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!--solon native end-->
+        <!--solon aot end-->
 
         <dependency>
             <groupId>org.noear</groupId>
@@ -80,15 +73,16 @@
             </plugin>
         </plugins>
     </build>
-         
-    <repositories>		
+
+
+    <repositories>
         <repository>
-	    <id>tencent</id>
-	    <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
-	    <snapshots>
-		<enabled>false</enabled>
-	    </snapshots>
-	</repository>
+            <id>tencent</id>
+            <url>https://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus Snapshots</name>

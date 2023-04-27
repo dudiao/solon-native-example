@@ -39,19 +39,12 @@ mvn clean package
 1. 引入依赖（本项目已经引入）
 
 ```xml
-<!--solon native start-->
-<!--aot 注册native元信息-->
+<!--solon aot start（用于 aot 时注册 native 元信息）-->
 <dependency>
     <groupId>org.noear</groupId>
     <artifactId>solon.aot</artifactId>
 </dependency>
-<!-- apt 生成代理类 -->
-<dependency>
-    <groupId>org.noear</groupId>
-    <artifactId>solon.proxy.apt</artifactId>
-    <scope>provided</scope>
-</dependency>
-<!--solon native end-->
+<!--solon aot end-->
 ```
 
 2. 激活 native 的 profile，执行`mvn`命令
@@ -71,7 +64,7 @@ mvn clean native:compile -P native
 ```http request
 GET http://localhost:8080/hello?name=solon
 GET http://localhost:8080/hello/tml?name=solon
-GET http://localhost:8080/jquery.min.js
+GET http://localhost:8080/htm/hello.htm
 ```
 
 ### remote
