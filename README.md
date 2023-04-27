@@ -31,7 +31,7 @@ gu install native-image
 ## 2、打包成 jar
 
 ```shell
-mvn clean package
+mvn clean package -DskipTests
 ```
 
 ## 3、打包成 native 可执行程序
@@ -53,7 +53,7 @@ mvn clean package
 sdk use java 22.3.1.r17-grl
 
 # 打包成native可执行程序
-mvn clean native:compile -P native
+mvn clean native:compile -P native -DskipTests
 
 # 运行可执行成
 ./target/solon-native-example
