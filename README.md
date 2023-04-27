@@ -64,7 +64,6 @@ mvn clean native:compile -P native
 ```http request
 GET http://localhost:8080/hello?name=solon
 GET http://localhost:8080/hello/tml?name=solon
-GET http://localhost:8080/jquery.min.js
 GET http://localhost:8080/htm/hello.htm
 ```
 
