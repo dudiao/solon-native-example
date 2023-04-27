@@ -1,5 +1,7 @@
 package com.github.dudiao.solon.nativex.example.dso.aot;
 
+import com.github.dudiao.solon.nativex.example.model.Model;
+import com.github.dudiao.solon.nativex.example.model.entity.Order;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Component;
@@ -17,7 +19,13 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
 
   @Override
   public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
-    log.info("MyNativeProcessor process");
-    nativeMetadata.registerSerialization(User.class);
+    log.info("RuntimeNativeRegistrar process");
+
+    //按包注册（）
+    nativeMetadata.registerSerialization(Model.class.getPackage());
+
+    //按类注册
+    //nativeMetadata.registerSerialization(User.class);
+    //nativeMetadata.registerSerialization(Order.class);
   }
 }
