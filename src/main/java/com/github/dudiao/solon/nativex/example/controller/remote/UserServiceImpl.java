@@ -1,5 +1,6 @@
 package com.github.dudiao.solon.nativex.example.controller.remote;
 
+import com.github.dudiao.solon.nativex.example.model.entity.Order;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
@@ -17,5 +18,10 @@ public class UserServiceImpl implements UserService{
     user.setWxid(String.valueOf(userId));
     user.setUser_name("dudiao");
     return user;
+  }
+
+  @Override
+  public long addOrder(Order order) {
+    return order.getOrderId();
   }
 }
