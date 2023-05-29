@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService{
   public User getById(long userId) {
     User user = new User();
     user.setWxid(String.valueOf(userId));
-    user.setUser_name("dudiao");
+    user.setName("dudiao");
     return user;
   }
 

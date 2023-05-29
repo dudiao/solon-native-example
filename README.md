@@ -89,3 +89,9 @@ GET http://localhost:8080/cache/say?msg=你好
 响应：`I want say: 你好, now: 2023-04-15 17:01:09`
 
 参数`msg`不变，响应不变，说明缓存生效
+
+### Mybatis native
+
+```http request
+GET http://localhost:8080/user/1
+```
