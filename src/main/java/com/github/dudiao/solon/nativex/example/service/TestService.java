@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.nativex.example.dso.service;
+package com.github.dudiao.solon.nativex.example.service;
 
 /**
  * @author songyinyin

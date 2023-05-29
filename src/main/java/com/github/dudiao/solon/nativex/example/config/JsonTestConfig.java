@@ -1,4 +1,4 @@
-package com.github.dudiao.solon.nativex.example.dso.event;
+package com.github.dudiao.solon.nativex.example.config;
 
 import lombok.Data;
 import org.noear.solon.annotation.Configuration;
@@ -13,7 +13,7 @@ import java.io.File;
 @Data
 @Inject("${json}")
 @Configuration
-public class JsonSortConfig {
+public class JsonTestConfig {
 
   private File inputFilePath;
 

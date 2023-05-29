@@ -1,7 +1,7 @@
-package com.github.dudiao.solon.nativex.example.dso.service.impl;
+package com.github.dudiao.solon.nativex.example.service.impl;
 
 import cn.hutool.core.date.DateUtil;
-import com.github.dudiao.solon.nativex.example.dso.service.TestService;
+import com.github.dudiao.solon.nativex.example.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.ProxyComponent;
 import org.noear.solon.data.annotation.Cache;
