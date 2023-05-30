@@ -30,7 +30,7 @@ public class AppStartEvent implements EventListener<AppLoadEndEvent> {
   @Override
   public void onEvent(AppLoadEndEvent event) throws Throwable {
     log.info("app start end, config: {}", config);
-
+    log.info("start init db ...");
     try {
       String ddl  = """
         CREATE TABLE my_user (
@@ -55,7 +55,7 @@ public class AppStartEvent implements EventListener<AppLoadEndEvent> {
     } catch (Exception e) {
       log.error("init db error", e);
     }
-    log.info("init db success");
+
   }
 
 }

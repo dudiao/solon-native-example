@@ -19,6 +19,7 @@ mybatis.db1:
     - "com.github.dudiao.solon.nativex.example.model.entity"
   mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
     - "com.github.dudiao.solon.nativex.example.mapper"
+    - "classpath:mapper/*.xml"
   configuration:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
