@@ -7,8 +7,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.3.1</version>
-        <relativePath />
+        <version>2.3.3-SNAPSHOT</version>
     </parent>
 
     <groupId>com.dudiao.solon</groupId>
@@ -39,7 +38,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>mybatis-solon-plugin</artifactId>
+            <artifactId>mybatis-plus-extension-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
@@ -69,6 +68,13 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-core</artifactId>
             <version>${hutool.version}</version>
+        </dependency>
+
+        <!--测试数据生成-->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
         </dependency>
 
         <dependency>
