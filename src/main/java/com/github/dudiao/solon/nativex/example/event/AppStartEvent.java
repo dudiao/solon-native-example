@@ -12,6 +12,9 @@ import org.noear.solon.core.event.EventListener;
 import org.noear.wood.DbContext;
 import org.noear.wood.annotation.Db;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author songyinyin
  * @since 2023/4/5 10:34
@@ -52,7 +55,16 @@ public class AppStartEvent implements EventListener<AppLoadEndEvent> {
     userMapper.insert(user);
 
     Faker faker = new Faker();
-
+    int num = 20;
+    for (int i = 0; i < num; i++) {
+      User fakerUser = new User();
+      fakerUser.setUserId(i + 2L);
+      fakerUser.setWxid("wxid_" + faker.number().digits(6));
+      fakerUser.setName(faker.name().fullName());
+      fakerUser.setHeadImg(faker.avatar().image());
+      fakerUser.setRemarkName(faker.name().username());
+      userMapper.insert(fakerUser);
+    }
   }
 
 }

@@ -12,6 +12,7 @@ datasource:
   username: sa
   password:
   jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
+  maxPoolSize: 1
 
 #默认
 mybatis.db1:
@@ -19,7 +20,7 @@ mybatis.db1:
     - "com.github.dudiao.solon.nativex.example.model.entity"
   mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
     - "com.github.dudiao.solon.nativex.example.mapper"
-    - "classpath:mapper/*.xml"
+#    - "classpath:mapper/*.xml"
   configuration:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
