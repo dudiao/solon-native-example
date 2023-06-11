@@ -49,6 +49,13 @@ public class TestController {
     return userMapper.selectById(id);
   }
 
+  @Mapping("/userByName/{name}")
+  public User user(@Path("name") String name) {
+    LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();
+    query.eq(User::getName, name);
+    return userMapper.selectOne(query);
+  }
+
   @Mapping("/user/page/{num}")
   public IPage<User> userPage(@Path("num") Long num) {
     LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();

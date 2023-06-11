@@ -63,7 +63,9 @@ mvn clean native:compile -P native -DskipTests
 
 ```http request
 GET http://localhost:8080/hello?name=solon
+
 GET http://localhost:8080/hello/tml?name=solon
+
 GET http://localhost:8080/htm/hello.htm
 ```
 

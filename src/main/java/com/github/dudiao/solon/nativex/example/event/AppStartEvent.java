@@ -3,7 +3,6 @@ package com.github.dudiao.solon.nativex.example.event;
 import com.github.dudiao.solon.nativex.example.config.JsonTestConfig;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
-import com.github.javafaker.Faker;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
@@ -11,9 +10,6 @@ import org.noear.solon.core.event.AppLoadEndEvent;
 import org.noear.solon.core.event.EventListener;
 import org.noear.wood.DbContext;
 import org.noear.wood.annotation.Db;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author songyinyin
@@ -35,15 +31,15 @@ public class AppStartEvent implements EventListener<AppLoadEndEvent> {
     log.info("app start end, config: {}", config);
     log.info("start init db ...");
     String ddl = """
-            CREATE TABLE my_user (
-                user_id BIGINT PRIMARY KEY,
-                head_img VARCHAR(255),
-                nick_name VARCHAR(255),
-                remark_name VARCHAR(255),
-                name VARCHAR(255),
-                wxid VARCHAR(255)
-              );
-            """;
+      CREATE TABLE my_user (
+          user_id BIGINT PRIMARY KEY,
+          head_img VARCHAR(255),
+          nick_name VARCHAR(255),
+          remark_name VARCHAR(255),
+          name VARCHAR(255),
+          wxid VARCHAR(255)
+        );
+      """;
     db.sql(ddl).execute();
 
     User user = new User();
@@ -54,15 +50,14 @@ public class AppStartEvent implements EventListener<AppLoadEndEvent> {
     user.setRemarkName("备注呀");
     userMapper.insert(user);
 
-    Faker faker = new Faker();
     int num = 20;
     for (int i = 0; i < num; i++) {
       User fakerUser = new User();
       fakerUser.setUserId(i + 2L);
-      fakerUser.setWxid("wxid_" + faker.number().digits(6));
-      fakerUser.setName(faker.name().fullName());
-      fakerUser.setHeadImg(faker.avatar().image());
-      fakerUser.setRemarkName(faker.name().username());
+      fakerUser.setWxid("wxid_00" + i);
+      fakerUser.setName("name_" + i);
+      fakerUser.setHeadImg("https://xxx.com/1_%s.jpg".formatted(i));
+      fakerUser.setRemarkName("remark_name_" + i);
       userMapper.insert(fakerUser);
     }
   }
