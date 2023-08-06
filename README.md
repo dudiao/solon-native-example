@@ -14,11 +14,11 @@
 
 下载对应的版本，建议使用 sdkman ( 安装地址：[https://sdkman.io/](https://sdkman.io/) ) 来管理不同的jdk版本
 ```shell
-# 最新版本为：22.3.1.r17-grl，可以在下载地址中查看最新版本
-sdk install java 22.3.1.r17-grl
+# 最新版本为：17.0.8-graalce，可以在下载地址中查看最新版本
+sdk install java 17.0.8-graalce
 
-# 使用22.3.1.r17-grl版本
-sdk use java 22.3.1.r17-grl
+# 使用 17.0.8-graalce 版本
+sdk use java 17.0.8-graalce
 ```
 
 ### native-image
@@ -50,7 +50,7 @@ mvn clean package -DskipTests
 2. 激活 native 的 profile，执行`mvn`命令
 
 ```shell
-sdk use java 22.3.1.r17-grl
+sdk use java 17.0.7-graal
 
 # 打包成native可执行程序
 mvn clean native:compile -P native -DskipTests
