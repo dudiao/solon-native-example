@@ -97,3 +97,11 @@ GET http://localhost:8080/cache/say?msg=你好
 ```http request
 GET http://localhost:8080/user/1
 ```
+
+## 5、关于 graalvm native 的一些说明
+
+当使用一个新的第三方包时，不知道第三方包中哪些地方使用了反射等 graalvm 不支持的特性，可以使用`agentlib:native-image-agent`来生成配置文件，然后在`native-image`命令中引入配置文件，这样就可以解决第三方包中的问题了
+
+```
+-agentlib:native-image-agent=config-output-dir=/Users/xxx/study/solon-native-example/target/tracing-agent
+```

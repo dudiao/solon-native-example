@@ -10,8 +10,6 @@ import org.noear.solon.logging.utils.LogUtilToSlf4j;
 @SolonMain
 public class App {
   public static void main(String[] args) {
-    Solon.start(App.class, args, x -> {
-      LogUtil.globalSet(new LogUtilToSlf4j());
-    });
+    Solon.start(App.class, args);
   }
 }

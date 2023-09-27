@@ -5,7 +5,7 @@ import com.github.dudiao.solon.nativex.example.controller.TestController;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
 import org.noear.solon.aot.RuntimeNativeRegistrar;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 
 /**
  * @author songyinyin
@@ -14,7 +14,7 @@ import org.noear.solon.core.AopContext;
 @Component
 public class MyRuntimeNativeRegistrar implements RuntimeNativeRegistrar {
   @Override
-  public void register(AopContext context, RuntimeNativeMetadata metadata) {
+  public void register(AppContext context, RuntimeNativeMetadata metadata) {
 
     metadata.registerSerialization(Page.class);
 
