@@ -4,7 +4,6 @@ import com.github.dudiao.solon.nativex.example.config.JsonTestConfig;
 import com.github.dudiao.solon.nativex.example.mapper.UserMapper;
 import com.github.dudiao.solon.nativex.example.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.solon.integration.MybatisAdapterDefault;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.event.AppLoadEndEvent;
@@ -30,32 +29,37 @@ public class AppStartEvent implements EventListener<AppLoadEndEvent> {
   @Override
   public void onEvent(AppLoadEndEvent event) throws Throwable {
     log.info("app start end, config: {}", config);
+    log.info("start init db ...");
+    String ddl = """
+      CREATE TABLE my_user (
+          user_id BIGINT PRIMARY KEY,
+          head_img VARCHAR(255),
+          nick_name VARCHAR(255),
+          remark_name VARCHAR(255),
+          name VARCHAR(255),
+          wxid VARCHAR(255)
+        );
+      """;
+    db.sql(ddl).execute();
 
-    try {
-      String ddl  = """
-        CREATE TABLE my_user (
-            user_id BIGINT PRIMARY KEY,
-            head_img VARCHAR(255),
-            nick_name VARCHAR(255),
-            remark_name VARCHAR(255),
-            name VARCHAR(255),
-            wxid VARCHAR(255)
-          );
-        """;
-      db.sql(ddl).execute();
+    User user = new User();
+    user.setUserId(1L);
+    user.setWxid("wxid_123456");
+    user.setName("dudiao");
+    user.setHeadImg("https://xxx.com/1.jpg");
+    user.setRemarkName("备注呀");
+    userMapper.insert(user);
 
-      User user = new User();
-      user.setUserId(1L);
-      user.setWxid("wxid_123456");
-      user.setName("dudiao");
-      user.setHeadImg("https://xxx.com/1.jpg");
-      user.setRemarkName("备注呀");
-      userMapper.insert(user);
-
-    } catch (Exception e) {
-      log.error("init db error", e);
+    int num = 20;
+    for (int i = 0; i < num; i++) {
+      User fakerUser = new User();
+      fakerUser.setUserId(i + 2L);
+      fakerUser.setWxid("wxid_00" + i);
+      fakerUser.setName("name_" + i);
+      fakerUser.setHeadImg("https://xxx.com/1_%s.jpg".formatted(i));
+      fakerUser.setRemarkName("remark_name_" + i);
+      userMapper.insert(fakerUser);
     }
-    log.info("init db success");
   }
 
 }

@@ -1,5 +1,7 @@
 package com.github.dudiao.solon.nativex.example.model.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -9,8 +11,10 @@ import java.io.Serializable;
  * @since 2023/4/2 16:26
  */
 @Data
+@TableName("my_user")
 public class User implements Serializable {
 
+  @TableId
   private Long userId;
 
   private String headImg;
