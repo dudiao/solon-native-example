@@ -105,3 +105,7 @@ GET http://localhost:8080/user/1
 ```
 -agentlib:native-image-agent=config-output-dir=/Users/xxx/study/solon-native-example/target/tracing-agent
 ```
+
+## 6、三方包的一些不支持项
+
+spring-boot 已经踩了很多坑了，可以作为参考：https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-with-GraalVM
