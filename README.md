@@ -6,7 +6,6 @@
 ## 1、环境要求
 `graalvm 17` & `native-image`
 
-
 ### graalvm 17
 官方安装文档：https://www.graalvm.org/latest/docs/getting-started/#install-graalvm
 
@@ -73,6 +72,7 @@ GET http://localhost:8080/htm/hello.htm
 
 ```http request
 GET http://localhost:8080/rpc/v1/user/getById?userId=11
+GET http://localhost:8080/rpc/v1/user/addOrder?orderId=12
 ```
 响应：
 ```json
