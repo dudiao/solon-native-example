@@ -29,8 +29,10 @@ gu install native-image
 
 ## 2、打包成 jar
 
+用 install 可以兼容多模块场景，用 package 只适合单模块
+
 ```shell
-mvn clean package -DskipTests
+mvn clean install -DskipTests
 ```
 
 ## 3、打包成 native 可执行程序
