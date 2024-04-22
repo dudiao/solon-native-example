@@ -23,43 +23,43 @@ import java.util.List;
 @Controller
 public class TestController {
 
-  @Inject
-  private TestService testService;
-  @Inject
-  UserMapper userMapper;
+    @Inject
+    private TestService testService;
+    @Inject
+    UserMapper userMapper;
 
-  @Mapping("/hello")
-  public String hello(@Param(defaultValue = "world") String name) {
-    return "Hello " + name;
-  }
+    @Mapping("/hello")
+    public String hello(@Param(defaultValue = "world") String name) {
+        return "Hello " + name;
+    }
 
-  @Mapping("/hello/tml")
-  public ModelAndView helloTml(@Param(defaultValue = "world") String name) {
-    return new ModelAndView("hello.ftl").put("name", name);
-  }
+    @Mapping("/hello/tml")
+    public ModelAndView helloTml(@Param(defaultValue = "world") String name) {
+        return new ModelAndView("hello.ftl").put("name", name);
+    }
 
-  @Mapping("/cache/say")
-  public String say(String msg) {
-    return testService.say(msg);
-  }
+    @Mapping("/cache/say")
+    public String say(String msg) {
+        return testService.getClass().getName() + "\n::" + testService.say(msg);
+    }
 
 
-  @Mapping("/user/{id}")
-  public User userById(@Path("id") Long id) {
-    return userMapper.selectById(id);
-  }
+    @Mapping("/user/{id}")
+    public User userById(@Path("id") Long id) {
+        return userMapper.selectById(id);
+    }
 
-  @Mapping("/userByName/{name}")
-  public User user(@Path("name") String name) {
-    LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();
-    query.eq(User::getName, name);
-    return userMapper.selectOne(query);
-  }
+    @Mapping("/userByName/{name}")
+    public User user(@Path("name") String name) {
+        LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();
+        query.eq(User::getName, name);
+        return userMapper.selectOne(query);
+    }
 
-  @Mapping("/user/page/{num}")
-  public IPage<User> userPage(@Path("num") Long num) {
-    LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();
-    query.ge(User::getUserId, 10);
-    return userMapper.selectPage(Page.of(num, 5), query);
-  }
+    @Mapping("/user/page/{num}")
+    public IPage<User> userPage(@Path("num") Long num) {
+        LambdaQueryWrapper<User> query = new LambdaQueryWrapper<>();
+        query.ge(User::getUserId, 10);
+        return userMapper.selectPage(Page.of(num, 5), query);
+    }
 }
