@@ -1,7 +1,6 @@
 package com.github.dudiao.solon.nativex.example.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
 import com.github.dudiao.solon.nativex.example.service.TestService;
@@ -14,8 +13,6 @@ import org.noear.solon.annotation.Param;
 import org.noear.solon.annotation.Path;
 import org.noear.solon.core.handle.ModelAndView;
 
-import java.util.List;
-
 /**
  * @author songyinyin
  * @since 2023/4/14 14:34
@@ -25,6 +22,7 @@ public class TestController {
 
     @Inject
     private TestService testService;
+
     @Inject
     UserMapper userMapper;
 
